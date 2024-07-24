@@ -1,0 +1,61 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px 0;
+  }
+  
+  .banner-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .banner-image img {
+    height: auto;
+    width: 50%;
+  }
+  
+  .banner-text {
+    text-align: right;
+    max-width: 50%;
+  }
+  
+  .banner-text h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .banner-text p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .shop-now {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .banner-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .banner-image img {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .banner-text {
+      text-align: center;
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  }

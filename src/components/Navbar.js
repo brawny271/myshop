@@ -1,8 +1,9 @@
 import React from 'react';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
-<nav className="navbar">
+<div className="navbar">
       <ul className="navbar-menu">
         <li>New</li>
         <li className="active">Pre-Owned</li>
@@ -23,7 +24,7 @@ const Navbar = () => {
       <div className="navbar-icons">
         {/* Icons can be added here */}
       </div>
-    </nav>
+    </div>
   );
 };
 
