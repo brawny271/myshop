@@ -1,27 +1,38 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar__logo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
   }
   
   .navbar-menu {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
+    padding: 10px 20px;
   }
   
   .navbar-menu li {
     margin-right: 20px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
   }
   
-  .navbar-menu .active {
+  /* .navbar-menu .active {
     font-weight: bold;
     border-bottom: 2px solid #000;
-  }
+  } */
   
   .sell-button {
     background-color: #f0c14b;
