@@ -1,23 +1,54 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-const productSlice = createSlice({
-  name: 'products',
-  initialState: {
+const initialState = {
+  products: {
     items: [],
     status: 'idle',
     error: null,
   },
+  selectedCategory: 'all',
+  filters: {
+    category: [],
+    priceRange: [],
+    ratingRange: []
+  },
+};
+
+const dataSlice = createSlice({
+  name: "data",
+  initialState,
   reducers: {
     setProducts: (state, action) => {
-      state.items = action.payload;
-      state.status = 'succeeded';
+      state.products.items = action.payload;
+      state.products.status = 'succeeded';
     },
     setProductsError: (state, action) => {
-      state.error = action.payload;
-      state.status = 'failed';
+      state.products.error = action.payload;
+      state.products.status = 'failed';
+    },
+    setCategory: (state, action) => {
+      state.selectedCategory = action.payload;
+    },
+    setFilterOptions: (state, action) => {
+      const { filterType, value } = action.payload;
+      state.filters[filterType] = value;
+    },
+    clearFilters: (state) => {
+      state.filters = {
+        category: [],
+        priceRange: [],
+        ratingRange: []
+      };
     },
   },
 });
 
-export const { setProducts, setProductsError } = productSlice.actions;
-export default productSlice.reducer;
+export const {
+  setProducts,
+  setProductsError,
+  setCategory,
+  setFilterOptions,
+  clearFilters
+} = dataSlice.actions;
+
+export default dataSlice.reducer;

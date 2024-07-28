@@ -1,16 +1,17 @@
 import React from "react";
 import "./Navbar.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setCategory } from "../Redux/productSlice";
 
 const Navbar = () => {
-  const products = useSelector((state) => state.product);
+  const dispatch = useDispatch();
+  const selectedCategory = useSelector((state) => state.data.selectedCategory); 
 
-  const uniqueCategories = [
-    "men's clothing",
-    "jewelery",
-    "electronics",
-    "women's clothing"
-];
+  const uniqueCategories = ["all", "men's clothing", "jewelery", "electronics", "women's clothing"];
+
+  const handleCategoryClick = (category) => {
+    dispatch(setCategory(category));
+  };
 
   return (
     <div className="navbar">
@@ -24,9 +25,14 @@ const Navbar = () => {
       </div>
       <div>
         <ul className="navbar-menu">
-          <li>All Products</li>
-          {uniqueCategories?.map((category) => (
-            <li key={category}>{category}</li>
+          {uniqueCategories.map((category) => (
+            <li
+              key={category}
+              className={category === selectedCategory ? 'active' : ''}
+              onClick={() => handleCategoryClick(category)}
+            >
+              {category}
+            </li>
           ))}
         </ul>
         <div className="navbar-icons"></div>
