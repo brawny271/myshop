@@ -38,10 +38,7 @@ const Filter = () => {
       updatedFilters = [...currentFilters, range];
     }
 
-    // Dispatch the updated filters to Redux
     dispatch(setFilterOptions({ filterType, value: updatedFilters }));
-
-    // Reset category to 'all' and dispatch category change
     dispatch(setCategory('all'));
   };
 

@@ -1,62 +1,79 @@
 .banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f8f8;
-    padding: 20px 0;
-    height: 17vh;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  margin: 2rem;
+  height: 17vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-content-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-content {
+  display: flex;
+  max-width: 1200px;
+  width: 300%; /* Adjust width based on number of items */
+  justify-content: space-around;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.banner-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.banner-image img {
+  height: 10rem;
+  width: auto;
+}
+
+.banner-text {
+  text-align: right;
+  max-width: 50%;
+}
+
+.banner-text h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.shop-now {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
   .banner-content {
-    display: flex;
-    max-width: 1200px;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    text-align: center;
   }
-  
+
   .banner-image img {
-    height: 10rem;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
   }
-  
+
   .banner-text {
-    text-align: right;
-    max-width: 50%;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 100%;
   }
-  
-  .banner-text h1 {
-    font-size: 2rem;
-    margin: 0;
-  }
-  
-  .banner-text p {
-    font-size: 1rem;
-    margin: 10px 0;
-  }
-  
-  .shop-now {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  @media (max-width: 768px) {
-    .banner-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .banner-image img {
-      width: 100%;
-      max-width: 100%;
-    }
-  
-    .banner-text {
-      text-align: center;
-      margin-top: 20px;
-      max-width: 100%;
-    }
-  }
+}
