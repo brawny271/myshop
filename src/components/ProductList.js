@@ -58,11 +58,21 @@ const ProductList = () => {
 
   const filteredProducts = filterProducts(products, filters, selectedCategory);
 
+  const getAlternateImage = (product, products) => {
+    const sameCategoryProducts = products.filter(
+      (p) => p.category === product.category && p.id !== product.id
+    );
+    return sameCategoryProducts.length > 0
+      ? sameCategoryProducts[Math.floor(Math.random() * sameCategoryProducts.length)]
+          .image
+      : product.image;
+  };
+
   return (
     <div className="product-list">
       {filteredProducts.map((product, index) => (
         <React.Fragment key={product.id}>
-          <ProductCard product={product} />
+          <ProductCard product={product} alternateImage={getAlternateImage(product, filteredProducts)} />
           {index === 5 && (
             <div className="ad-card">
               <h3>Sponsored</h3>
