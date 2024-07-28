@@ -3,14 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   products: {
     items: [],
-    status: 'idle',
+    status: "idle",
     error: null,
   },
-  selectedCategory: 'all',
+  selectedCategory: "all",
   filters: {
     category: [],
     priceRange: [],
-    ratingRange: []
+    ratingRange: [],
   },
 };
 
@@ -20,11 +20,11 @@ const dataSlice = createSlice({
   reducers: {
     setProducts: (state, action) => {
       state.products.items = action.payload;
-      state.products.status = 'succeeded';
+      state.products.status = "succeeded";
     },
     setProductsError: (state, action) => {
       state.products.error = action.payload;
-      state.products.status = 'failed';
+      state.products.status = "failed";
     },
     setCategory: (state, action) => {
       state.selectedCategory = action.payload;
@@ -37,7 +37,7 @@ const dataSlice = createSlice({
       state.filters = {
         category: [],
         priceRange: [],
-        ratingRange: []
+        ratingRange: [],
       };
     },
   },
@@ -48,7 +48,7 @@ export const {
   setProductsError,
   setCategory,
   setFilterOptions,
-  clearFilters
+  clearFilters,
 } = dataSlice.actions;
 
 export default dataSlice.reducer;

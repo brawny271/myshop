@@ -1,28 +1,36 @@
 .filter {
-    width: 200px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-right: 1px solid #e0e0e0;
+  width: 200px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #e0e0e0;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.filter-section h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.filter-section ul {
+  font-size: 13px;
+  font-weight: 400;
+  list-style: none;
+  padding: 0;
+}
+
+.filter-section li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .filter {
+    width: 70%;
+    border-right: none;
+    /* height: 50vh; */
   }
-  
-  .filter-section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid gray;
-  }
-  
-  .filter-section h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  
-  .filter-section ul {
-    font-size: 13px;
-    font-weight: 400;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .filter-section li {
-    margin-bottom: 10px;
-  }
+}

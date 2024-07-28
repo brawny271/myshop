@@ -63,8 +63,9 @@ const ProductList = () => {
       (p) => p.category === product.category && p.id !== product.id
     );
     return sameCategoryProducts.length > 0
-      ? sameCategoryProducts[Math.floor(Math.random() * sameCategoryProducts.length)]
-          .image
+      ? sameCategoryProducts[
+          Math.floor(Math.random() * sameCategoryProducts.length)
+        ].image
       : product.image;
   };
 
@@ -72,7 +73,10 @@ const ProductList = () => {
     <div className="product-list">
       {filteredProducts.map((product, index) => (
         <React.Fragment key={product.id}>
-          <ProductCard product={product} alternateImage={getAlternateImage(product, filteredProducts)} />
+          <ProductCard
+            product={product}
+            alternateImage={getAlternateImage(product, filteredProducts)}
+          />
           {index === 5 && (
             <div className="ad-card">
               <h3>Sponsored</h3>
