@@ -63,7 +63,20 @@ const ProductList = () => {
       {filteredProducts.map((product, index) => (
         <React.Fragment key={product.id}>
           <ProductCard product={product} />
-          {index === 0 && (
+          {index === 5 && (
+            <div className="ad-card">
+              <h3>Sponsored</h3>
+              <p>This is an advertisement</p>
+              <a
+                href="https://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Google
+              </a>
+            </div>
+          )}
+          {index === 9 && (
             <div className="ad-card">
               <h3>Sponsored</h3>
               <p>This is an advertisement</p>
@@ -81,5 +94,4 @@ const ProductList = () => {
     </div>
   );
 };
-
 export default ProductList;

@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../Redux/productSlice";
+import CartImage from '../assets/cart.png'
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -16,11 +17,16 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar__logo">
+        <div className="nav_headers">
         <div style={{ width: "3.5rem", borderRight: "1px solid gray" }}>
           New
         </div>
         <div style={{ borderBottom: "2px solid orange", paddingBottom: "2px" }}>
           Pre-Owned
+        </div>
+        </div>
+        <div>
+          <img src={CartImage} style={{width:"20px",height:"20px"}} title="Go to Cart"/>
         </div>
       </div>
       <div>

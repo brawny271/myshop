@@ -8,9 +8,12 @@
 
   .navbar__logo{
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
     padding: 10px 20px;
+  }
+
+  .nav_headers{
+    gap: 20px;
     font-size: 16px;
     font-weight: 500;
   }
@@ -27,12 +30,12 @@
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
+    padding-bottom: 4px;
   }
   
-  /* .navbar-menu .active {
-    font-weight: bold;
-    border-bottom: 2px solid #000;
-  } */
+  .navbar-menu li.active {
+    border-bottom: 2px solid orange;
+  }
   
   .sell-button {
     background-color: #f0c14b;

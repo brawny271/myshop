@@ -6,18 +6,18 @@ const Banner = () => {
   const bannerContent = [
     {
       img: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg',
-      img_title: 'Luxury Watch 1',
+      img_title: 'All New Collection',
       offer_description: 'Up to 70% off + 40% Additional Retail',
     },
     {
       img: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg',
-      img_title: 'Luxury Watch 2',
+      img_title: 'All New Collection',
       offer_description: 'Up to 60% off + 30% Additional Retail',
     },
     {
       img: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-      img_title: 'Luxury Watch 3',
-      offer_description: 'Up to 50% off + 20% Additional Retail',
+      img_title: 'All New Collection',
+        offer_description: 'Up to 50% off + 20% Additional Retail',
     }
   ];
 
