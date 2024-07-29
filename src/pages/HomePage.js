@@ -9,13 +9,16 @@ import filter from "../assets/filter.svg";
 const HomePage = () => {
   const [filters, setFilters] = useState({});
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isTablet, setIsTablet] = useState(window.innerWidth > 768 && window.innerWidth <= 1024);
   const [showFilter, setShowFilter] = useState(!isMobile);
 
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
+      const tablet = window.innerWidth > 768 && window.innerWidth <= 1024;
       setIsMobile(mobile);
-      setShowFilter(!mobile);
+      setIsTablet(tablet);
+      setShowFilter(!(mobile || tablet));
     };
 
     window.addEventListener("resize", handleResize);
@@ -34,9 +37,8 @@ const HomePage = () => {
     <div className="home-page">
       <Navbar />
       <div className="content">
-        {isMobile && (
+        {(isMobile || isTablet) && (
           <button className="filter-button" onClick={toggleFilter}>
-            {/* {showFilter ? 'Hide Filters' : 'Show Filters'} */}
             <img
               src={filter}
               alt="Filter Icon"
@@ -47,7 +49,7 @@ const HomePage = () => {
           </button>
         )}
         {showFilter && (
-          <div className={isMobile ? "filter-dropdown" : ""}>
+          <div className={isMobile || isTablet ? "filter-dropdown" : ""}>
             <Filter filters={filters} onFilterChange={handleFilterChange} />
           </div>
         )}
@@ -59,5 +61,4 @@ const HomePage = () => {
     </div>
   );
 };
-
 export default HomePage;
